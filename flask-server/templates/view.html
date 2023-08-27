@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View CSV Data</title>
+</head>
+<body>
+    <h1>View CSV Data</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv">
+        <input type="submit" value="Upload CSV">
+    </form>
+    <br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>member_csv</th>
+                <th>age_range</th>
+                <th>tier</th>
+                <th>500000</th>
+                <th>700000</th>
+                <th>1000000</th>
+                <th>1500000</th>
+                <th>2000000</th>
+                <th>2500000</th>
+                <th>3000000</th>
+                <th>4000000</th>
+                <th>5000000</th>
+                <th>7500000</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+                <tr>
+                    <td>{{ item._id }}</td>
+                    <td>{{ item.member_csv }}</td>
+                    <td>{{ item.age_range }}</td>
+                    <td>{{ item.tier }}</td>
+                    <td>{{ item["500000"] }}</td>
+                    <td>{{ item["700000"] }}</td>
+                    <td>{{ item["1000000"] }}</td>
+                    <td>{{ item["1500000"] }}</td>
+                    <td>{{ item["2000000"] }}</td>
+                    <td>{{ item["2500000"] }}</td>
+                    <td>{{ item["3000000"] }}</td>
+                    <td>{{ item["4000000"] }}</td>
+                    <td>{{ item["5000000"] }}</td>
+                    <td>{{ item["7500000"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
