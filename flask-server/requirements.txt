@@ -3,3 +3,4 @@ pymongo
 pandas
 certifi
 gunicorn
+flask_cors

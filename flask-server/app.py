@@ -3,6 +3,7 @@ from pymongo import MongoClient
 import pandas as pd
 from io import StringIO
 import certifi
+from flask_cors import CORS
 
 # Connect to the local MongoDB instance
 # client = MongoClient('mongodb://localhost:27017/')
@@ -11,6 +12,7 @@ import certifi
 
 
 app=Flask(__name__)
+CORS(app)
 uri='mongodb+srv://joey_cool_one:Joey123@cluster0.gc8pm.mongodb.net/?retryWrites=true&w=majority'
 
 
